@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>Awesome Site</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">@ViewBag.Title</p>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year チャック.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.site-title, .content-wrapper, footer, .wmm').hide();
+            $('.site-title').slideDown(700, function () {
+                $('.content-wrapper').slideDown(700);
+                $('footer').fadeIn(700);
+            });
+            $('.wmm').fadeIn(3500);
+        });
+    </script>
+</body>
+</html>
